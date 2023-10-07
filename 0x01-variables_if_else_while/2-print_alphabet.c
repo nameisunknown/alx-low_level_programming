@@ -14,21 +14,21 @@ int main(void)
 
 	char end = 'z';
 
-	while(start == end)
+	while (start <= end)
 	{
 		putchar(start);
 		start++;
 	}
 	return (0);
 /**
-* int charac;
-*
-* for (charac = 61; charac <= 80; charac++)
-* {
-* char updated = (char) charac;
-* putchar(updated);
-* }
-* putchar("\n");
-* return (0);
-*/
+ * int charac;
+ *
+ * for (charac = 61; charac <= 80; charac++)
+ * {
+ * char updated = (char) charac;
+ * putchar(updated);
+ * }
+ * putchar("\n");
+ * return (0);
+ */
 }
