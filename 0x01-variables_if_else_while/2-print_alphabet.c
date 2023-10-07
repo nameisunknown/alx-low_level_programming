@@ -21,15 +21,4 @@ int main(void)
 	}
 	putchar('\n');
 	return (0);
-/**
- * int charac;
- *
- * for (charac = 61; charac <= 80; charac++)
- * {
- * char updated = (char) charac;
- * putchar(updated);
- * }
- * putchar("\n");
- * return (0);
- */
 }
