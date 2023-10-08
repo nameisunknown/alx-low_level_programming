@@ -11,7 +11,7 @@
 int main(void)
 {
 	char sm = 'a';
-	
+
 	char sm2 = 'z';
 
 	char bg = 'A';
