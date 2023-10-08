@@ -19,8 +19,8 @@ int main(void)
 		if (start != 'q' && start != 'e')
 		{
 			putchar(start);
-			start++;
 		}
+		start++;
 	}
 	putchar('\n');
 	return (0);
