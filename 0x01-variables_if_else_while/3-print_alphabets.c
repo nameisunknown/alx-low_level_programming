@@ -5,7 +5,7 @@
  *
  * Description: Prints a-z && A-Z
  *
- * Return 0: Always 0 (Success)
+ * Return: Always 0 (Success)
  */
 
 int main(void)
