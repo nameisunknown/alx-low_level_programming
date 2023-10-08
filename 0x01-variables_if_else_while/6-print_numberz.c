@@ -5,7 +5,7 @@
  *
  * Description: Prints 0 - 9 with putchar
  *
- * Rturn: Always 0 (Success)
+ * Return: Always 0 (Success)
  */
 
 int main(void)
