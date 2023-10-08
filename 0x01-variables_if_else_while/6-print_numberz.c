@@ -16,7 +16,7 @@ int main(void)
 
 	for (pq = 0; pq < num; pq++)
 	{
-		putchar(pq);
+		putchar(pq + '0');
 	}
 	putchar('\n');
 	return (0);
