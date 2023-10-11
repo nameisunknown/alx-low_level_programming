@@ -14,7 +14,7 @@ int main(void)
 
 	int count = 0;
 
-	while (count < 9)
+	while (count < 8)
 	{
 		_putchar(valueToBePrinted[count]);
 		count++;
