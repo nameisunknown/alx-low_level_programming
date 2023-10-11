@@ -12,9 +12,12 @@ int main(void)
 {
 	char valueToBePrinted[] = "_putchar";
 
-	for (int count = 0; count < 9; count++)
+	int count = 0;
+
+	while (count < 9)
 	{
 		_putchar(valueToBePrinted[count]);
+		count++;
 	}
 	_putchar('\n');
 	return (0);
