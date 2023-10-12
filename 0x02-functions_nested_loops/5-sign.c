@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_sign: prints sign of a argument entered
+ * print_sign - prints sign of a argument entered
  *
  * @c: contains the argument that we will be printing it's sign
  *
@@ -19,4 +19,13 @@ int print_sign(int n)
 	}
 	else if (n == 0)
 	{
-_putchar('
+		result = 0;
+		_putchar('0');
+	}
+	else
+	{
+		result = -1;
+		_putchar('-');
+	}
+	return result;
+}
