@@ -7,7 +7,7 @@
  *
  * Return: Always None (Success)
  */
-	
+
 void print_alphabet(void)
 {
 	int start = 97;
@@ -20,5 +20,4 @@ void print_alphabet(void)
 		start++;
 	}
 	_putchar('\n');
-	return;
 }
