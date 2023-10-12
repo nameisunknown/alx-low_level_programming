@@ -20,7 +20,7 @@ void jack_bauer(void)
 			_putchar((dayCounter % 10) + '0');
 			_putchar(':');
 			_putchar((secondsCounter / 10) + '0');
-			_putchar((secondsCounter % 10) + '0');	
+			_putchar((secondsCounter % 10) + '0');
 			secondsCounter++;
 			_putchar('\n');
 		}
