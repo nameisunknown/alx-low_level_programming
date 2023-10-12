@@ -15,9 +15,9 @@ void print_alphabet_x10(void)
 	while (counter < num)
 	{
 		int lettersStart = 97;
-		
+
 		int lettersEnd = 122;
-		
+
 		while (lettersStart <= lettersEnd)
 		{
 			_putchar(lettersStart);
