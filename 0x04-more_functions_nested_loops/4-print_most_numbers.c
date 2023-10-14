@@ -12,7 +12,7 @@ void print_most_numbers(void)
 
 	while (numstart <= numend)
 	{
-		if (numstart != 2 || numstart != 4)
+		if (numstart != 2 && numstart != 4)
 		{
 			_putchar(numstart + '0');
 		}
