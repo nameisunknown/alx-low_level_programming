@@ -6,7 +6,7 @@
  * @dest: pointer 1
  * @src: pointer 2
  * @n: n bytes
- * Return: strings 
+ * Return: strings
  */
 
 char *_strncat(char *dest, char *src, int n)
@@ -26,5 +26,5 @@ char *_strncat(char *dest, char *src, int n)
 		dest++;
 		counter++;
 	}
-	return result;
+	return (result);
 }
