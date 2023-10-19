@@ -1,52 +1,27 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "main.h"
 
 /**
- * char *_strcat - concatenates 2 strings
+ * _strcat - concatenates 2 strings
  *
- * Returns: Pointer to dest
+ * @dest: pointer 1
+ * @src: pointer 2
+ * Return: concatenated strings
  */
 
-int lenofstring(char *dest)
-{
-	int counter = 0;
-
-	while (*(dest + counter) != '\0')
-	{
-		counter++;
-	}
-	return (counter);
-}
 char *_strcat(char *dest, char *src)
 {
-	int arg1len = lenofstring(dest);
+	char *result = dest;
 
-	int arg2len = lenofstring(src);
-
-	int runloopfor = arg1len + arg2len + 2;
-
-	int counter = 0;
-
-	char *result = (char *)malloc(runloopfor);
-
-	while (counter <= runloopfor)
+	while (*dest != '\0')
 	{
-
-		if (counter >= arg1len)
-		{
-			*(result + counter) = *(src + (counter - arg1len));
-		}
-		else
-		{
-			*(result + counter) = *(dest + counter);
-		}
-		counter++;
+		dest++;
 	}
-	result[counter] = '\0';
-	printf("%s", result);
+	while (*src != '\0')
+	{
+		*dest = *src;
+		src++;
+		dest++;
+	}
+	*dest = '\0';
 	return (result);
-}
-int main(void)
-{
-	_strcat("Hello ", "Son");
 }
