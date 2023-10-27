@@ -3,10 +3,9 @@
 void _puts_recursion(char *s)
 {
 	putchar(*s);
-	*s++;
 	if (*s != '\0')
 	{
-		_puts_recursion(s++);
+		_puts_recursion(s + 1);
 	}
 	putchar('\0');
 }
