@@ -1,6 +1,12 @@
 #include "main.h"
 #include <stdio.h>
 
+/**
+ * _puts_recursion - prints the string entered
+ *
+ * @s: pointer containing strings
+ */
+
 void _puts_recursion(char *s)
 {
 	putchar(*s);
@@ -10,8 +16,3 @@ void _puts_recursion(char *s)
 	}
 	putchar('\n');
 }
-/**while (*s != '\0')
-{
-	write(1, &s, 1);
-	s++;
-}*/
