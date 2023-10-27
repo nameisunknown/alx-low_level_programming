@@ -1,0 +1,29 @@
+#include "main.h"
+
+void _print_rev_recursion(char *s)
+{
+	int lenofarg = strl(s) - 1;
+
+	char *addr = &s[lenofarg];
+
+	int n = 0;
+
+	if(n <= lenofarg)
+	{
+		_putchar(*addr);
+		n++;
+		_print_rev_recursion(addr - n);
+	{
+
+}
+
+int strl(char *s)
+{
+	int count = 0;
+
+	while (*s != '\0')
+	{
+		count++;
+	}
+	return (count);
+}
