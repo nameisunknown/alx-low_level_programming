@@ -14,7 +14,7 @@ char *create_array(unsigned int size, char c)
 {
 	char *charPassed;
 
-	charPassed = malloc((sizeof(char) * size)+ 1);
+	charPassed = malloc(sizeof(char) * size);
 
 
 	if (size > 0)
@@ -30,7 +30,6 @@ char *create_array(unsigned int size, char c)
 				*(charPassed + countThrough) = c;
 				countThrough++;
 			}
-			*charPassed = '\0';
 		}
 		else
 		{
