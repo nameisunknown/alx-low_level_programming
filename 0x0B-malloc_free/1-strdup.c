@@ -14,21 +14,30 @@ char *_strdup(char *str)
 
 	int counter;
 
+	int count;
+
 	counter = 0;
+
+	count = 0;
+
+	if (str == NULL)
+		return (NULL);
 
 	while (*str != '\0')
 	{
 		str++;
 		counter++;
 	}
-	strpointer = malloc((sizeof(char) * counter) + 1);
+
+	strpointer = malloc((counter * sizeof(*strpointer)) + 1);
 
 	if (strpointer == NULL)
 		return (NULL);
+
 	while (*str != '\0')
 	{
-		*strpointer = *str;
-		strpointer++;
+		*(strpointer + count) = *(str + count);
+		count++;
 		str++;
 	}
 	*strpointer = '\0';
