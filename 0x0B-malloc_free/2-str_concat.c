@@ -19,11 +19,13 @@ char *str_concat(char *s1, char *s2)
 
 	int result;
 
-	count2 = 0;
-
-	result = 0;
+	int index;
 
 	index = 0;
+
+	count2 = 0;
+
+	count1 = 0;
 
 	if (s1 != NULL && s2 != NULL)
 	{
