@@ -2,64 +2,35 @@
 #include <stdlib.h>
 
 /**
- * str_concat - concatenates two strings
- *
- * @s1: first pointer
- * @s2: second pointer
- * Return: newly allocated space in memory.
+ * str_concat - concatenate two strings using malloc
+ * @s1: string 1
+ * @s2: string 2
+ * Return: pointer to concat string
  */
 
 char *str_concat(char *s1, char *s2)
 {
-	char *total;
+	char *a;
+	int i, j, c, d;
 
-	int count1;
+	if (s1 == NULL)
+	s1 = "";
+	if (s2 == NULL)
+	s2 = "";
 
-	int count2;
+	for (i = 0; s1[i] != '\0'; i++)
+	;
+	for (j = 0; s2[j] != '\0'; j++)
+	;
 
-	int result;
-
-	int index;
-
-	index = 0;
-
-	count2 = 0;
-
-	count1 = 0;
-
-	if (s1 != NULL && s2 != NULL)
-	{
-		while (*s1 != '\0')
-		{
-			count1++;
-			s1++;
-		}
-		while (*s2 != '\0')
-		{
-			count2++;
-			s2++;
-		}
-		result = count1 + count2;
-
-		total = malloc((result * sizeof(*total)) + 1);
-
-		while (index < result)
-		{
-			if (index < count1)
-			{
-				*(total + index) = *(s1 + index);
-			}
-			if (index >= count1)
-				*(total + index) = *(s2 + index);
-			index++;
-		}
-		*total = '\0';
-
-	}
+	a = malloc((i * sizeof(*s1)) + (j * sizeof(*s2)) + 1);
+	if (a == NULL)
+	return (NULL);
+	for (c = 0, d = 0; c < (i + j + 1); c++)
+	if (c < i)
+	a[c] = s1[c];
 	else
-	{
-		return ("");
+	[c] = s2[d++];
 	}
-	return (total);
+	return (a);
 }
-
