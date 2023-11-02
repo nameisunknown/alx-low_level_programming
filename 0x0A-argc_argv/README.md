@@ -1,1 +1,1 @@
-This repository details argc and arg vector
+0x0A. C - argc, argv
