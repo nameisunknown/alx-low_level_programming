@@ -1,1 +1,1 @@
-Structs and typede
+This directory is about Typedef
