@@ -14,7 +14,7 @@
 
 void print_numbers(const char *seperator, const unsigned int n, ...)
 {
-	unsigned int loop = 0, count = 0;
+	unsigned int loop = 0;
 
 	va_list arr;
 
@@ -24,24 +24,13 @@ void print_numbers(const char *seperator, const unsigned int n, ...)
 		exit(1);
 	if (n == 0)
 		exit(1);
-	while (*seperator != '\0')
-	{
-		count++;
-		seperator++;
-	}
 	while (loop < n)
 	{
 		int v = va_arg(arr, int);
 
-		unsigned int count2 = 0;
-
 		printf("%d", v);
-
-		while(count2 < count)
-		{
-			printf("%c", *seperator);
-			count2++;
-		}
+		if (loop < (n-1))
+			printf("%s", seperator);
 		loop++;
 	}
 	putchar('\n');
