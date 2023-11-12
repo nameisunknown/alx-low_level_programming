@@ -20,10 +20,6 @@ void print_numbers(const char *seperator, const unsigned int n, ...)
 
 	va_start(arr, n);
 
-	if (seperator == NULL)
-		exit(1);
-	if (n == 0)
-		exit(1);
 	while (loop < n)
 	{
 		int v = va_arg(arr, int);
