@@ -29,7 +29,7 @@ void print_numbers(const char *seperator, const unsigned int n, ...)
 		int v = va_arg(arr, int);
 
 		printf("%d", v);
-		if (loop < (n - 1))
+		if (loop < (n - 1) && seperator != NULL)
 			printf("%s", seperator);
 		loop++;
 	}
