@@ -11,11 +11,6 @@ size_t listint_len(const listint_t *h)
 {
 	size_t numberOfElementsPresent = 0;
 
-	if (h == NULL)
-	{
-		printf("pointer is empty");
-		return (-1);
-	}
 	while (h != NULL)
 	{
 		numberOfElementsPresent++;
