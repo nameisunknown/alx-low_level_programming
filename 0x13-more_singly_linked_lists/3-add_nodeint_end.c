@@ -5,6 +5,7 @@
  *
  * @head: pointer to a pointer
  * @n: value to be added ro teh beginning pointer
+ * Return: a pointer to the last node
  */
 
 listint_t *add_nodeint_end(listint_t **head, const int n)
@@ -21,7 +22,9 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 	else
 	{
 		listint_t *nodeToHead;
+
 		nodeToHead = *head;
+
 		while (nodeToHead->next != NULL)
 		{
 			nodeToHead = nodeToHead->next;
