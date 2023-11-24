@@ -13,13 +13,18 @@
 
 unsigned int binary_to_uint(const char *b)
 {
+	int *collector;
+
 	size_t len = strlen(b);
+
 	unsigned int result = 0;
+
 	size_t c = 0;
 
-	int *collector = malloc(len * sizeof(int));
+	collector = malloc(len * sizeof(int));
+
 	if (collector == NULL)
-		return 0;
+		return (0);
 
 	while (c < len)
 	{
@@ -30,11 +35,12 @@ unsigned int binary_to_uint(const char *b)
 		else
 		{
 			free(collector);
-			return 0;
+			return (0);
 		}
 		c++;
 	}
 	c = 0;
+
 	while (c < len)
 	{
 		result = (result << 1) | collector[c];
@@ -42,5 +48,5 @@ unsigned int binary_to_uint(const char *b)
 	}
 
 	free(collector);
-	return result;
+	return (result);
 }
