@@ -5,6 +5,8 @@
 /**
  * main - check the code
  *
+ * @ac: count of arg entered on command line
+ * @av: argument vector
  * Return: Always 0.
  */
 int main(int ac, char **av)
