@@ -1,5 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
@@ -12,25 +16,25 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (filename == NULL)
 		return (0);
 
-	filedesc = open(filedesc, 0_RDONLY);
+	filedesc = open(filename, O_RDONLY);
 
 	if (filedesc == -1)
 	{
 		return (0);
 	}
 
-	str = malloc(sizeof(char) * letters)
+	str = malloc(sizeof(char) * letters);
 
 	while (count < letters)
 	{
 		collector = read(filedesc, str, letters);
+		count++;
 	}
 	if (str != NULL)
 	{
 		write(STDOUT_FILENO, str, letters);
 	}
 	free(str);
-	fclose(filedesc);
+	close(filedesc);
 	return (collector);
-
 }
