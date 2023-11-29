@@ -33,7 +33,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	if (noOfLettersRead != -1)
 	{
-		if (write(STDOUT_FILENO, readCollector, letters) == -1)
+		if (write(STDOUT_FILENO, readCollector, noOfLettersRead) == -1)
 		{
 			free(readCollector);
 			return (0);
