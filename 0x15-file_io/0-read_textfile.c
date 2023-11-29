@@ -5,6 +5,14 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
+/**
+ * read_textfile - reads a text file and prints
+ *
+ * @filename: this is the file to be read
+ * @letters: this is numbers of letters to be read
+ * Return: the actual numbers of letters it could read and print
+ */
+
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	int fildes, noOfLettersRead;
@@ -39,6 +47,4 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	free(readCollector);
 	close(fildes);
 	return (noOfLettersRead);
-	
-
 }
