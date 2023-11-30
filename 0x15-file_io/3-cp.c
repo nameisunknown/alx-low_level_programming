@@ -27,6 +27,8 @@ void _copy(char *from, char *to)
 
 	char buff[1024];
 
+	ssize_t totalNumberOfBytesRead;
+
 	fileDescForFileTo = open(to, O_WRONLY | O_CREAT | O_TRUNC, 0664);
         fileDescForFileFrom = open(from, O_RDONLY);
 
@@ -42,13 +44,19 @@ void _copy(char *from, char *to)
                 exit(99);
         }
 
-        while (read(fileDescForFileFrom, buff, sizeof(buff)))
+        while ((totalNumberOfBytesRead = read(fileDescForFileFrom, buff, sizeof(buff))) > 0)
 	{
-		if (write(fileDescForFileTo, buff, sizeof(buff)) == -1)
+		if (write(fileDescForFileTo, buff, totalNumberOfBytesRead) == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", to);
 			exit(99);
 		}
+	}
+
+	if (totalNumberOfBytesRead == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from %s\n", from);
+		exit(98);
 	}
 
         if (close(fileDescForFileTo) == -1)
