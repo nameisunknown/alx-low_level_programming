@@ -1,12 +1,20 @@
 #include "main.h"
 
+/**
+ * main - copeies the content of a file to another file
+ *
+ * @argc: count of args entered on command line
+ * @argv: arg entered
+ * Return: 0 on success
+ */
+
 int main(int argc, char **argv)
 {
 	int fileDescForFileTo, fileDescForFileFrom;
 
 	char buff[1024];
 
-	if ( argc != 3)
+	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
@@ -28,17 +36,19 @@ int main(int argc, char **argv)
 	}
 
 	read(fileDescForFileFrom, buff, sizeof(buff));
-        write(fileDescForFileTo, buff, sizeof(buff));
+	write(fileDescForFileTo, buff, sizeof(buff));
 
 	if (close(fileDescForFileTo) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", close(fileDescForFileTo));
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", 
+				close(fileDescForFileTo));
 		exit(100);
 	}
 
 	if (close(fileDescForFileFrom) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", close(fileDescForFileFrom));
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", 
+				close(fileDescForFileFrom));
 		exit(100);
 	}
 	return (0);
