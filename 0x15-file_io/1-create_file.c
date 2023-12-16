@@ -10,7 +10,7 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	int filedescriptor;
+	int filedescriptor, numbytes;
 
 	if (filename == NULL)
 		return (-1);
@@ -18,16 +18,18 @@ int create_file(const char *filename, char *text_content)
 	filedescriptor = open(filename, O_WRONLY | O_CREAT | O_EXCL, 0600);
 
 	if (filedescriptor != -1)
+		return (-1);
+	if (text_content == NULL)
 	{
-		if (write(filedescriptor, text_content, strlen(text_content)) == -1)
-		{
-			close(filedescriptor);
-			return (-1);
-		}
+		close(filedescriptor);
+		return (1);
 	}
-	else
+
+	numbytes = write(filedescriptor, text_content, strlen(text_content));
+
+	if (numbytes == -1)
 	{
-		truncate(filename, 0);
+		close(filedescriptor);
 		return (-1);
 	}
 	close(filedescriptor);
